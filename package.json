@@ -59,8 +59,7 @@
     "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.2.0",
-    "ts-node": "^8.5.4",
-    "typescript": "^3.7.3"
+    "ts-node": "^8.5.4"
   },
   "peerDependencies": {
     "react": "^16.8.6",
@@ -81,6 +80,7 @@
     "@ctrl/tinycolor": "^2.5.4",
     "@types/jest": "^24.0.23",
     "@types/react": "^16.8.25",
-    "@types/react-native": "^0.60.25"
+    "@types/react-native": "^0.60.25",
+    "typescript": "^3.7.3"
   }
 }
