@@ -33,16 +33,16 @@
   ],
   "scripts": {
     "build": "run-s build:*",
-    "build:clean": "rimraf lib types",
-    "build:compile": "tsc",
-    "build:flow-types": "ts-node -P scripts/tsconfig.json scripts/move-flow-types.ts",
+    "build:clean": "npx rimraf lib types",
+    "build:compile": "npx tsc",
+    "build:flow-types": "npx ts-node -P scripts/tsconfig.json scripts/move-flow-types.ts",
     "prepack": "run-s build",
     "prepare": "install-self-peers -- --ignore-scripts",
-    "test": "jest --config jestconfig.json",
+    "test": "npx jest --config jestconfig.json",
     "validate:android": "cd android && ./gradlew spotlessCheck",
     "validate:android:fix": "cd android && ./gradlew spotlessApply",
-    "validate:eslint": "eslint \"src/**/*.{js,ts,tsx}\" \"example/**/*.{js,ts,tsx}\"",
-    "validate:typescript": "tsc --noEmit"
+    "validate:eslint": "npx eslint \"src/**/*.{js,ts,tsx}\" \"example/**/*.{js,ts,tsx}\"",
+    "validate:typescript": "npx tsc --noEmit"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^0.0.5",
