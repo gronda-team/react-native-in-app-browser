@@ -1,0 +1,38 @@
+/**
+ * Copyright (c) 2018-2020, Matei Bogdan Radu <opensource@mateiradu.dev>
+ *
+ * This source code is licensed under the MIT license found in the LICENSE
+ * file in the root directory of this source tree.
+ *
+ * @flow
+ */
+
+type PlatformOSType = "ios" | "android" | "macos" | "windows" | "web";
+
+export type SettingsAndroid = {|
+  toolbarColor?: string,
+  showTitle?: boolean,
+  closeButtonIcon?: any,
+  addDefaultShareMenu?: boolean
+|};
+
+export type SettingsIOS = {|
+  preferredBarTintColor?: string,
+  preferredControlTintColor?: string,
+  barCollapsingEnabled?: boolean,
+  entersReaderIfAvailable?: boolean,
+  dismissButtonStyle?: "done" | "close" | "cancel"
+|};
+
+export type Settings = {|
+  android?: SettingsAndroid,
+  ios?: SettingsIOS
+|};
+
+declare export class InAppBrowser {
+  static open(url: string, settings?: Settings): Promise<void>;
+  static close(): void;
+  static warmup(): Promise<boolean>;
+  static mayLaunchUrl(url: string, additionalUrls?: string[]): Promise<boolean>;
+  static configure(settings: Settings): void;
+}
